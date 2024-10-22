@@ -1,16 +1,18 @@
 // /src/app/layout.tsx
 import { ReactNode } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import NavBar from '@/components/NavBar';
+import BackToTopButton from '@/components/BackToTopButton';
+import RecommendedProducts from '@/components/RecommendedProducts'; // Importation des produits recommandés
 import '@/styles/globals.css';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
-      <body>
-        <Header />
+      <body className="bg-white text-black">
+        <NavBar />
         <main>{children}</main>
-        <Footer />
+        <RecommendedProducts /> {/* Ajout des produits recommandés */}
+        <BackToTopButton />
       </body>
     </html>
   );
