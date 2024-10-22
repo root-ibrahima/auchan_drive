@@ -8,6 +8,7 @@ export const products: Product[] = [
     price: 0.89,
     imageUrl: '/images/lait.jpg',
     description: 'Lait demi-écrémé, idéal pour vos petits-déjeuners.',
+    rating: 4.5,
   },
   {
     id: 2,
@@ -15,13 +16,15 @@ export const products: Product[] = [
     price: 1.49,
     imageUrl: '/images/coca.jpg',
     description: 'Boisson gazeuse rafraîchissante, format familial.',
+    rating: 4.8,
   },
   {
     id: 3,
     name: 'Pâtes Barilla 500g',
     price: 1.35,
-    imageUrl: '/images/pates.jpg',
+    imageUrl: '/images/pate.jpg',
     description: 'Pâtes italiennes de qualité, parfaites pour vos plats.',
+    rating: 5,
   },
   {
     id: 4,
@@ -29,6 +32,7 @@ export const products: Product[] = [
     price: 9.99,
     imageUrl: '/images/poulet.jpg',
     description: 'Poulet fermier élevé en plein air, savoureux et tendre.',
+    rating: 4.6,
   },
   {
     id: 5,
@@ -36,6 +40,7 @@ export const products: Product[] = [
     price: 2.99,
     imageUrl: '/images/tomate.jpg',
     description: 'Tomates fraîches biologiques, idéales pour vos salades.',
+    rating: 4.7,
   },
   {
     id: 6,
@@ -43,6 +48,7 @@ export const products: Product[] = [
     price: 1.82,
     imageUrl: '/images/beurre.jpg',
     description: 'Beurre doux parfait pour vos tartines et pâtisseries.',
+    rating: 4.9,
   },
   {
     id: 7,
@@ -50,6 +56,7 @@ export const products: Product[] = [
     price: 1.59,
     imageUrl: '/images/pain-de-mie.jpg',
     description: 'Pain de mie complet, idéal pour des toasts ou sandwiches.',
+    rating: 4.3,
   },
   {
     id: 8,
@@ -57,6 +64,7 @@ export const products: Product[] = [
     price: 2.49,
     imageUrl: '/images/riz.jpg',
     description: 'Riz basmati, pour des plats parfumés et équilibrés.',
+    rating: 4.7,
   },
   {
     id: 9,
@@ -64,6 +72,7 @@ export const products: Product[] = [
     price: 3.99,
     imageUrl: '/images/oeufs.jpg',
     description: 'Œufs bio provenant de poules élevées en plein air.',
+    rating: 4.8,
   },
   {
     id: 10,
@@ -71,13 +80,15 @@ export const products: Product[] = [
     price: 0.99,
     imageUrl: '/images/farine.jpg',
     description: 'Farine de blé idéale pour toutes vos préparations culinaires.',
+    rating: 4.4,
   },
   {
     id: 11,
-    name: 'Huile d\'Olive Extra Vierge 75cl',
+    name: "Huile d'Olive Extra Vierge 75cl",
     price: 5.99,
     imageUrl: '/images/huile-d-olive.jpg',
-    description: 'Huile d\'olive extra vierge, parfaite pour la cuisson et l\'assaisonnement.',
+    description: "Huile d'olive extra vierge, parfaite pour la cuisson et l'assaisonnement.",
+    rating: 4.9,
   },
   {
     id: 12,
@@ -85,13 +96,15 @@ export const products: Product[] = [
     price: 3.99,
     imageUrl: '/images/nutella.jpg',
     description: 'Pâte à tartiner au chocolat et noisettes, idéale pour les gourmands.',
+    rating: 5,
   },
   {
     id: 13,
-    name: 'Jus d\'Orange Pur Jus 1L',
+    name: "Jus d'Orange Pur Jus 1L",
     price: 1.83,
     imageUrl: '/images/jus-d-orange.jpg',
     description: 'Jus d\'orange 100% pur jus, sans sucres ajoutés.',
+    rating: 4.6,
   },
   {
     id: 14,
@@ -99,6 +112,7 @@ export const products: Product[] = [
     price: 2.27,
     imageUrl: '/images/yaourt.jpg',
     description: 'Yaourts nature bio, riches en calcium.',
+    rating: 4.4,
   },
   {
     id: 15,
@@ -106,6 +120,7 @@ export const products: Product[] = [
     price: 2.59,
     imageUrl: '/images/pommes.jpg',
     description: 'Pommes Golden, croquantes et sucrées.',
+    rating: 4.8,
   },
   {
     id: 16,
@@ -113,6 +128,7 @@ export const products: Product[] = [
     price: 2.49,
     imageUrl: '/images/emmental.jpg',
     description: 'Fromage Emmental râpé, parfait pour gratiner vos plats.',
+    rating: 4.5,
   },
   {
     id: 17,
@@ -120,6 +136,7 @@ export const products: Product[] = [
     price: 3.99,
     imageUrl: '/images/jambon.jpg',
     description: 'Jambon de Paris sans nitrite, idéal pour les sandwiches et quiches.',
+    rating: 4.7,
   },
   {
     id: 18,
@@ -127,6 +144,7 @@ export const products: Product[] = [
     price: 2.99,
     imageUrl: '/images/cereales.jpg',
     description: 'Céréales croustillantes au miel, parfaites pour le petit-déjeuner.',
+    rating: 4.9,
   },
   {
     id: 19,
@@ -134,6 +152,7 @@ export const products: Product[] = [
     price: 7.99,
     imageUrl: '/images/cabillaud.jpg',
     description: 'Filet de cabillaud, riche en protéines et oméga-3.',
+    rating: 4.3,
   },
   {
     id: 20,
@@ -141,5 +160,6 @@ export const products: Product[] = [
     price: 2.14,
     imageUrl: '/images/creme-fraiche.jpg',
     description: 'Crème fraîche épaisse, idéale pour les sauces et desserts.',
+    rating: 4.6,
   }
 ];
