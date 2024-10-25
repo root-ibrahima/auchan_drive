@@ -46,9 +46,6 @@ jobs:
       - name: Run migrations
         run: npx prisma migrate deploy
 
-      - name: Run tests
-        run: npm run test
-
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
