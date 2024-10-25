@@ -1,43 +1,64 @@
 // /src/components/NavBar.tsx
+"use client";
+
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 
 export default function NavBar() {
+  const { data: session, status } = useSession();
+
   return (
-    <nav className="bg-white/70 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+    <nav className="bg-gray-900 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-gray-800 tracking-wide">
-              Auchan Drive
-            </Link>
-          </div>
+          <Link href="/" className="text-xl font-bold text-white">
+            Auchan Drive
+          </Link>
 
           {/* Liens de navigation */}
-          <div className="hidden sm:flex space-x-6 items-center">
-            <NavLink href="/" label="Accueil" />
-            <NavLink href="/products" label="Produits" />
-            <NavLink href="/cart" label="Panier" />
-            <NavLink href="/agent-ia" label="Agent IA" />
-            <NavLink href="/signup" label="Inscription" />
-            <NavLink href="/login" label="Connexion" />
-            <NavLink href="/dashboard" label="Tableau de Bord" />
+          <div className="flex items-center space-x-4">
+            <Link href="/" className="text-white hover:text-indigo-400 transition">
+              Accueil
+            </Link>
+            <Link href="/products" className="text-white hover:text-indigo-400 transition">
+              Produits
+            </Link>
+            <Link href="/contact" className="text-white hover:text-indigo-400 transition">
+              Contact
+            </Link>
+
+            {/* Gestion de l'authentification */}
+            {status === 'authenticated' ? (
+              <>
+                <Link href="/dashboard" className="text-white hover:text-indigo-400 transition">
+                  Tableau de Bord
+                </Link>
+                <p className="text-white">Bonjour, {session?.user?.name}</p>
+                <button
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-full transition"
+                >
+                  Se déconnecter
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/auth/signin">
+                  <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-full transition">
+                    Se connecter
+                  </button>
+                </Link>
+                <Link href="/auth/register">
+                  <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full transition">
+                    S'inscrire
+                  </button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
     </nav>
-  );
-}
-
-// Composant NavLink pour style cohérent et effet de survol épuré
-function NavLink({ href, label }: { href: string; label: string }) {
-  return (
-    <Link
-      href={href}
-      className="text-gray-700 text-lg font-medium px-3 py-2 rounded transition-colors duration-200 hover:text-red-500 hover:underline"
-    >
-      {label}
-    </Link>
   );
 }

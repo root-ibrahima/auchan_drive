@@ -1,6 +1,6 @@
 // /app/api/products.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getProducts } from '../db/products';
+import { getProducts } from '../../db/products';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
