@@ -1,31 +1,15 @@
 // /src/app/dashboard/page.tsx
 "use client";
 
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
 
 export default function Dashboard() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    // Vérifier si l'utilisateur est authentifié
-    const checkAuth = async () => {
-      try {
-        const res = await axios.get('/api/check-auth'); // Endpoint pour vérifier le token
-        if (res.status === 200) {
-          setIsAuthenticated(true);
-        }
-      } catch {
-        router.push('/login'); // Rediriger vers la page de connexion si non authentifié
-      }
-    };
-
-    checkAuth();
-  }, [router]);
-
-  if (!isAuthenticated) return null;
+  const handleLogout = () => {
+    // Logique de déconnexion (ex. effacer le token)
+    router.push('/login');
+  };
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-100">
@@ -33,7 +17,7 @@ export default function Dashboard() {
         <h2 className="text-3xl font-bold mb-6 text-center">Tableau de Bord</h2>
         
         <div className="mb-6 text-center">
-          <p className="text-lg">Bienvenue, [Nom d'utilisateur]</p>
+          <p className="text-lg">Bienvenue, <span className="font-semibold">[Nom d'utilisateur]</span></p>
           <p className="text-gray-600">Email : [email@example.com]</p>
         </div>
         
@@ -41,7 +25,7 @@ export default function Dashboard() {
           <button className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 transition">
             Voir mes commandes
           </button>
-          <button className="w-full bg-red-500 text-white p-2 rounded hover:bg-red-600 transition">
+          <button className="w-full bg-red-500 text-white p-2 rounded hover:bg-red-600 transition" onClick={handleLogout}>
             Déconnexion
           </button>
         </div>

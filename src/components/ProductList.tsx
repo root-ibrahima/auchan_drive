@@ -3,10 +3,10 @@
 
 import { products } from '@/data/products';
 import Image from 'next/image';
-import { useCart } from '@/context/CartContext'; // Importation du hook useCart
-import { useRouter } from 'next/navigation'; // Importation depuis next/navigation
-import { useState } from 'react'; // Utilisation de useState pour gérer l'affichage des descriptions
-import Rating from '@/components/Rating'; // Importation du composant Rating
+import { useCart } from '@/context/CartContext'; 
+import { useRouter } from 'next/navigation'; 
+import { useState } from 'react'; 
+import Rating from '@/components/Rating'; 
 
 export default function ProductList() {
   const { addToCart } = useCart();
@@ -21,8 +21,8 @@ export default function ProductList() {
   };
 
   const handleAddToCart = (product: any) => {
-    addToCart(product); // Ajout au panier
-    router.push('/cart'); // Redirection vers la page panier
+    addToCart(product); 
+    router.push('/cart'); 
   };
 
   return (
