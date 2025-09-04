@@ -15,7 +15,7 @@ Un projet de simulation de site de commande en ligne pour Auchan Drive, dévelop
 ### Cloner le projet :
 
 ```bash
-git clone <url-du-repository>
+git clone https://github.com/root-ibrahima/auchan_drive.git
 cd auchan_drive
 ```
 
